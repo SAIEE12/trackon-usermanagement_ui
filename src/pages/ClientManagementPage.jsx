@@ -42,43 +42,43 @@ const ClientManagementPage = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap items-center gap-3 mb-4">
-  <input
-    type="text"
-    placeholder="Search by client name or department..."
-    className="border px-3 py-2 rounded w-full md:w-[340px]"
-    value={search}
-    onChange={(e) => setSearch(e.target.value)}
-  />
-  <select
-    className="border px-3 py-2 rounded w-full sm:w-auto"
-    value={department}
-    onChange={(e) => setDepartment(e.target.value)}
-  >
-    {departments.map((dept, i) => (
-      <option key={i}>{dept}</option>
-    ))}
-  </select>
-  <select
-    className="border px-3 py-2 rounded w-full sm:w-auto"
-    value={location}
-    onChange={(e) => setLocation(e.target.value)}
-  >
-    {locations.map((loc, i) => (
-      <option key={i}>{loc}</option>
-    ))}
-  </select>
-  <button
-    className="bg-gray-100 text-gray-700 px-3 py-2 rounded hover:bg-gray-200 w-full sm:w-auto"
-    onClick={() => {
-      setSearch("");
-      setDepartment("All Departments");
-      setLocation("All Locations");
-    }}
-  >
-    Clear Filters
-  </button>
-</div>
+      <div className="flex flex-wrap items-center gap-2 mb-4">
+        <input
+          type="text"
+          placeholder="Search by client name or department..."
+          className="border px-3 py-2 rounded w-full md:w-1/3"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <select
+          className="border px-3 py-2 rounded"
+          value={department}
+          onChange={(e) => setDepartment(e.target.value)}
+        >
+          {departments.map((dept, i) => (
+            <option key={i}>{dept}</option>
+          ))}
+        </select>
+        <select
+          className="border px-3 py-2 rounded"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+        >
+          {locations.map((loc, i) => (
+            <option key={i}>{loc}</option>
+          ))}
+        </select>
+        <button
+          className="bg-gray-100 text-gray-700 px-3 py-2 rounded hover:bg-gray-200"
+          onClick={() => {
+            setSearch("");
+            setDepartment("All Departments");
+            setLocation("All Locations");
+          }}
+        >
+          Clear Filters
+        </button>
+      </div>
 
       <div className="overflow-x-auto bg-white shadow rounded">
         <table className="min-w-full text-sm">
