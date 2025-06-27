@@ -63,7 +63,6 @@ const ClientManagementPage = () => {
     <div className="page-header-row">
       <div className="page-header">
         <h2>
-          <FiUsers />
           Client Management
         </h2>
         <p>Manage client profiles and track business relationships</p>
