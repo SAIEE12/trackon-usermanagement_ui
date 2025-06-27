@@ -20,17 +20,13 @@ const UserManagementPage = () => {
 
   return (
     <>
-      {/* Top filter/search bar */}
-      <FilterBar
-        searchTerm={searchTerm}
-        onSearch={setSearchTerm}
-        roleFilter={roleFilter}
-        onFilter={setRoleFilter}
-      />
-
+     
       {/* Page title and Add New User button */}
       <div className="flex justify-between items-center mb-4 px-4 mt-2">
-        <h2 className="text-xl font-semibold">User Management</h2>
+        <div>
+          <h2 className="text-xl font-semibold">User Management</h2>
+          <p className="text-sm text-gray-600">Manage system users and their roles</p>
+        </div>
         <button
           onClick={() => setShowAddModal(true)}
           className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
@@ -46,6 +42,15 @@ const UserManagementPage = () => {
           Add New User
         </button>
       </div>
+
+      {/* Top filter/search bar */}
+      <FilterBar
+        searchTerm={searchTerm}
+        onSearch={setSearchTerm}
+        roleFilter={roleFilter}
+        onFilter={setRoleFilter}
+      />
+
 
       {/* Table of users */}
       <UserTable users={filteredUsers} />
