@@ -28,6 +28,9 @@ const UserManagementPage = () => {
       />
 
       <UserTable users={filteredUsers} />
+      <button onClick={() => setShowAddModal(true)}>
+        Add User
+      </button>
 
       {showAddModal && <AddUserModal onClose={() => setShowAddModal(false)} setUsers={setUsers} />}
     </>
